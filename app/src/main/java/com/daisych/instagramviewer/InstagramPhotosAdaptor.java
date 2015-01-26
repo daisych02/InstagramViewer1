@@ -50,7 +50,7 @@ public class InstagramPhotosAdaptor extends ArrayAdapter<InstagramPhoto> {
         // Ask for photo to be added to image view based on photo url
         // Send network request, download image, convert image into bitmap, insert bitmap into image view
         Picasso.with(getContext()).load(photo.userPicture).into(imgUser);
-        Picasso.with(getContext()).load(photo.imageUrl).placeholder(getContext().getResources().getDrawable(R.drawable.instagram)).into(imgPhoto);
+        Picasso.with(getContext()).load(photo.imageUrl).placeholder(R.drawable.placeholder).into(imgPhoto);
         Picasso.with(getContext()).load(photo.imageUrl).into(imgPhoto);
 
         return convertView;
