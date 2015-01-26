@@ -37,12 +37,19 @@ public class InstagramPhotosAdaptor extends ArrayAdapter<InstagramPhoto> {
         TextView tvCaption = (TextView) convertView.findViewById(R.id.tvCaption);
         TextView tvLikes = (TextView) convertView.findViewById(R.id.tvLikes);
         TextView tvUserName = (TextView) convertView.findViewById(R.id.tvUsername);
+        TextView tvNumComments = (TextView) convertView.findViewById(R.id.tvNumComments);
+        TextView tvComment = (TextView) convertView.findViewById(R.id.tvComment);
+        TextView tvCommentUser = (TextView) convertView.findViewById(R.id.tvCommentUser);
         ImageView imgPhoto = (ImageView) convertView.findViewById(R.id.imgPhoto);
         ImageView imgUser = (ImageView) convertView.findViewById(R.id.imgUser);
         // Populate data into the view
         tvCaption.setText(photo.caption);
         tvLikes.setText(photo.likesCount + " Likes");
         tvUserName.setText(photo.username);
+        tvNumComments.setText("view all " + photo.commentCount + " comments");
+        tvComment.setText(photo.lastComment);
+        tvCommentUser.setText(photo.commentUser);
+
         imgPhoto.getLayoutParams().height = photo.imageHeight;
         // Reset image from recycled view
         imgPhoto.setImageResource(0);

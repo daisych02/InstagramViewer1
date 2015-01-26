@@ -13,6 +13,5 @@ public class InstagramPhoto {
     public int commentCount;
     public String lastComment;
     public String commentUser;
-    public String commentUserPicture;
 
 }

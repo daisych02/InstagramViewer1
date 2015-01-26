@@ -19,6 +19,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout;
+
 public class PhotoActivity extends ActionBarActivity {
     public static final String CLIENT_ID = "035fd409fcdb4f1e9c8b854d103ee7cf";
     private ArrayList<InstagramPhoto> photos = new ArrayList<InstagramPhoto>();
@@ -86,11 +88,13 @@ public class PhotoActivity extends ActionBarActivity {
                         photo.imageUrl = photoJSON.getJSONObject("images").getJSONObject("standard_resolution").getString("url");
                         photo.imageHeight = photoJSON.getJSONObject("images").getJSONObject("standard_resolution").getInt("height");
                         photo.likesCount = photoJSON.getJSONObject("likes").getInt("count");
-//                        photo.commentCount = photoJSON.getJSONObject("comments").getInt("count");
-//                        JSONArray comments = photoJSON.getJSONObject("comments").getJSONArray("data");
-//                        photo.lastComment = comments.getJSONObject(comments.length()-1).getString("text");
-//                        photo.commentUser = comments.getJSONObject(comments.length()-1).getJSONObject("user").getString("username");
-//                        photo.commentUserPicture = comments.getJSONObject(comments.length()-1).getJSONObject("user").getString("profile_picture");
+                        photo.commentCount = photoJSON.getJSONObject("comments").getInt("count");
+                        JSONArray comments = photoJSON.getJSONObject("comments").getJSONArray("data");
+                        if(comments.length() > 0) {
+                            JSONObject comment = comments.getJSONObject(comments.length() - 1);
+                            photo.lastComment = comment.get("text").toString();
+                            photo.commentUser = comment.getJSONObject("from").getString("username");
+                        }
 
                         photos.add(photo);
                     }

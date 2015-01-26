@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:paddingBottom="10dp"
+    android:paddingBottom="15dp"
     android:id="@+id/item_photo">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:adjustViewBounds="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="62dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,6 +21,7 @@
         android:id="@+id/tvCaption"
         android:maxLines="3"
         android:ellipsize="end"
+        android:textColor="#222222"
         android:layout_below="@+id/imgPhoto"
         android:layout_alignParentStart="true" />
 
@@ -39,15 +40,9 @@
         android:id="@+id/tvLikes"
         android:textColor="#FE2E9A"
         android:hint="0 Likes"
+        android:paddingTop="15dp"
         android:layout_alignBottom="@+id/iconLikes"
         android:layout_toEndOf="@+id/iconLikes" />
-
-    <!--<ImageView-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:id="@+id/imgUser"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignParentStart="true" />-->
 
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -73,5 +68,36 @@
         android:textStyle="bold"
         android:layout_marginBottom="15dp"
         android:hint="username" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvComment"
+        android:hint="latest comment"
+        android:textColor="#848484"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/tvNumComments"
+        android:layout_toEndOf="@+id/tvLikes" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNumComments"
+        android:layout_below="@+id/tvLikes"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="5dp"
+        android:hint="No Comments" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCommentUser"
+        android:textColor="#29088A"
+        android:paddingLeft="5dp"
+        android:layout_below="@+id/tvNumComments"
+        android:layout_alignParentStart="true"
+        android:hint="user" />
 
 </RelativeLayout>
