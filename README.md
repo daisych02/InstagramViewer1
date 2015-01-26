@@ -15,4 +15,4 @@ EXTRA : Show latest comment for each photo
 
 EXTRA : Display each user profile image using a RoundedImageView
 
-
+![alt tag](https://raw.githubusercontent.com/daisych02/InstagramViewer1/master/instagramViewer.gif)
